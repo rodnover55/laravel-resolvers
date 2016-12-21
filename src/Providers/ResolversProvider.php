@@ -15,6 +15,7 @@ class ResolversProvider extends ServiceProvider
     protected $app;
 
     public function register() {
+        $this->publishData();
         $this->bindResolvers();
     }
 
