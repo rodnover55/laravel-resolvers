@@ -1,7 +1,7 @@
 <?php
 
-use Mildberry\Resolvers\Interfaces;
-use Mildberry\Resolvers\Resolvers;
+use Rnr\Resolvers\Interfaces;
+use Rnr\Resolvers\Resolvers;
 
 return [
     'resolvers' => [

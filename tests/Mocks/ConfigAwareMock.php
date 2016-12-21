@@ -1,14 +1,18 @@
 <?php
-namespace Mildberry\Tests\Resolvers\Mocks;
+namespace Rnr\Tests\Resolvers\Mocks;
 
 
-use Mildberry\Resolvers\Interfaces\ConfigAwareInterface;
-use Mildberry\Resolvers\Traits\ConfigAwareTrait;
+use Rnr\Resolvers\Interfaces\ConfigAwareInterface;
+use Rnr\Resolvers\Traits\ConfigAwareTrait;
+use Illuminate\Config\Repository as Config;
 
 class ConfigAwareMock extends SimpleMock implements ConfigAwareInterface
 {
     use ConfigAwareTrait;
 
+    /**
+     * @return Config
+     */
     public function getConfig() {
         return $this->config;
     }

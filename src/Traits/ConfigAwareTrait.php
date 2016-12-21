@@ -1,5 +1,5 @@
 <?php
-namespace Mildberry\Resolvers\Traits;
+namespace Rnr\Resolvers\Traits;
 
 use Illuminate\Config\Repository as Config;
 

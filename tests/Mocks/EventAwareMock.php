@@ -1,8 +1,8 @@
 <?php
-namespace Mildberry\Tests\Resolvers\Mocks;
+namespace Rnr\Tests\Resolvers\Mocks;
 
-use Mildberry\Resolvers\Interfaces\EventAwareInterface;
-use Mildberry\Resolvers\Traits\EventAwareTrait;
+use Rnr\Resolvers\Interfaces\EventAwareInterface;
+use Rnr\Resolvers\Traits\EventAwareTrait;
 
 class EventAwareMock extends SimpleMock implements EventAwareInterface
 {

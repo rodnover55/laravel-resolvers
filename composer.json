@@ -1,5 +1,5 @@
 {
-    "name": "mildberry/resolver-provider",
+    "name": "rnr/resolver-provider",
     "type": "library",
     "version": "1.0",
     "require": {
@@ -17,12 +17,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "Mildberry\\Resolvers\\": "src/"
+            "Rnr\\Resolvers\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Mildberry\\Tests\\Resolvers\\": "tests/"
+            "Rnr\\Tests\\Resolvers\\": "tests/"
         }
     }
 }

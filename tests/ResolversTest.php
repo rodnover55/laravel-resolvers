@@ -1,15 +1,15 @@
 <?php
-namespace Mildberry\Tests\Resolvers;
+namespace Rnr\Tests\Resolvers;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Contracts\Logging\Log;
-use Mildberry\Tests\Resolvers\Mocks\ConfigAwareMock;
-use Mildberry\Tests\Resolvers\Mocks\ContainerAwareMock;
-use Mildberry\Tests\Resolvers\Mocks\DatabaseAwareMock;
-use Mildberry\Tests\Resolvers\Mocks\EventAwareMock;
-use Mildberry\Tests\Resolvers\Mocks\SimpleMock;
+use Rnr\Tests\Resolvers\Mocks\ConfigAwareMock;
+use Rnr\Tests\Resolvers\Mocks\ContainerAwareMock;
+use Rnr\Tests\Resolvers\Mocks\DatabaseAwareMock;
+use Rnr\Tests\Resolvers\Mocks\EventAwareMock;
+use Rnr\Tests\Resolvers\Mocks\SimpleMock;
 use Illuminate\Contracts\Config\Repository as Config;
-use Mildberry\Tests\Resolvers\Mocks\LogAwareMock;
+use Rnr\Tests\Resolvers\Mocks\LogAwareMock;
 
 class ResolversTest extends TestCase
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mildberry\Tests\Resolvers;
+namespace Rnr\Tests\Resolvers;
 
-use Mildberry\Resolvers\Providers\ResolversProvider;
+use Rnr\Resolvers\Providers\ResolversProvider;
 
 
 /**

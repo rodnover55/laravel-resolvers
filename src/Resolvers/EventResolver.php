@@ -1,8 +1,8 @@
 <?php
 
-namespace Mildberry\Resolvers\Resolvers;
+namespace Rnr\Resolvers\Resolvers;
 
-use Mildberry\Resolvers\Interfaces\EventAwareInterface;
+use Rnr\Resolvers\Interfaces\EventAwareInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 
 

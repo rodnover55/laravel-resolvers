@@ -1,8 +1,8 @@
 <?php
 
-namespace Mildberry\Resolvers\Resolvers;
+namespace Rnr\Resolvers\Resolvers;
 
-use Mildberry\Resolvers\Traits\ContainerAwareTrait;
+use Rnr\Resolvers\Traits\ContainerAwareTrait;
 
 
 /**

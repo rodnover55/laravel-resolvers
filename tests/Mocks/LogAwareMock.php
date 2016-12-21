@@ -1,8 +1,8 @@
 <?php
-namespace Mildberry\Tests\Resolvers\Mocks;
+namespace Rnr\Tests\Resolvers\Mocks;
 
-use Mildberry\Resolvers\Interfaces\LoggerAwareInterface;
-use Mildberry\Resolvers\Traits\LoggerAwareTrait;
+use Rnr\Resolvers\Interfaces\LoggerAwareInterface;
+use Rnr\Resolvers\Traits\LoggerAwareTrait;
 
 class LogAwareMock extends SimpleMock implements LoggerAwareInterface
 {

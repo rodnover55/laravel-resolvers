@@ -1,11 +1,11 @@
 <?php
 
-namespace Mildberry\Resolvers\Providers;
+namespace Rnr\Resolvers\Providers;
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
-use Mildberry\Resolvers\Resolvers\AbstractResolver;
+use Rnr\Resolvers\Resolvers\AbstractResolver;
 
 class ResolversProvider extends ServiceProvider
 {

@@ -1,5 +1,5 @@
 <?php
-namespace Mildberry\Resolvers\Interfaces;
+namespace Rnr\Resolvers\Interfaces;
 
 
 use Illuminate\Contracts\Logging\Log;

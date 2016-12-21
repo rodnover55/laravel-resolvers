@@ -1,8 +1,8 @@
 <?php
-namespace Mildberry\Tests\Resolvers\Mocks;
+namespace Rnr\Tests\Resolvers\Mocks;
 
-use Mildberry\Resolvers\Interfaces\ContainerAwareInterface;
-use Mildberry\Resolvers\Traits\ContainerAwareTrait;
+use Rnr\Resolvers\Interfaces\ContainerAwareInterface;
+use Rnr\Resolvers\Traits\ContainerAwareTrait;
 
 class ContainerAwareMock extends SimpleMock implements ContainerAwareInterface
 {

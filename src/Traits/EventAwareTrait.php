@@ -1,5 +1,5 @@
 <?php
-namespace Mildberry\Resolvers\Traits;
+namespace Rnr\Resolvers\Traits;
 
 
 use Illuminate\Contracts\Events\Dispatcher;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Mildberry\Resolvers\Resolvers;
+namespace Rnr\Resolvers\Resolvers;
 
-use Mildberry\Resolvers\Interfaces\ConfigAwareInterface;
+use Rnr\Resolvers\Interfaces\ConfigAwareInterface;
 use Illuminate\Contracts\Config\Repository as Config;
 
 

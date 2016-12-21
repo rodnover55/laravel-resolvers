@@ -1,5 +1,5 @@
 <?php
-namespace Mildberry\Tests\Resolvers\Mocks;
+namespace Rnr\Tests\Resolvers\Mocks;
 
 use PHPUnit_Framework_AssertionFailedError;
 

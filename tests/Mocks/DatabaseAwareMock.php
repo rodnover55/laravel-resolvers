@@ -1,8 +1,8 @@
 <?php
 
-namespace Mildberry\Tests\Resolvers\Mocks;
-use Mildberry\Resolvers\Interfaces\DatabaseAwareInterface;
-use Mildberry\Resolvers\Traits\DatabaseAwareTrait;
+namespace Rnr\Tests\Resolvers\Mocks;
+use Rnr\Resolvers\Interfaces\DatabaseAwareInterface;
+use Rnr\Resolvers\Traits\DatabaseAwareTrait;
 
 /**
  * @author Sergei Melnikov<me@rnr.name>

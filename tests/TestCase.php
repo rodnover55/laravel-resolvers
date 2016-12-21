@@ -1,9 +1,9 @@
 <?php
-namespace Mildberry\Tests\Resolvers;
+namespace Rnr\Tests\Resolvers;
 
 use Illuminate\Foundation\Application;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Mildberry\Resolvers\Providers\ResolversProvider;
+use Rnr\Resolvers\Providers\ResolversProvider;
 use Illuminate\Contracts\Config\Repository as Config;
 
 class TestCase extends BaseTestCase
