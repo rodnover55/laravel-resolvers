@@ -7,6 +7,7 @@ use Rnr\Tests\Resolvers\Mocks\ConfigAwareMock;
 use Rnr\Tests\Resolvers\Mocks\ContainerAwareMock;
 use Rnr\Tests\Resolvers\Mocks\DatabaseAwareMock;
 use Rnr\Tests\Resolvers\Mocks\EventAwareMock;
+use Rnr\Tests\Resolvers\Mocks\ResolvingMock;
 use Rnr\Tests\Resolvers\Mocks\SimpleMock;
 use Illuminate\Contracts\Config\Repository as Config;
 use Rnr\Tests\Resolvers\Mocks\LogAwareMock;
@@ -25,6 +26,8 @@ class ResolversTest extends TestCase
 
         $this->assertNotEmpty($container);
         $this->assertEquals($this->app, $container);
+
+        $this->assertTrue($object->resolved);
     }
 
     public function testConfig() {
@@ -68,4 +71,12 @@ class ResolversTest extends TestCase
         $this->assertEquals($builder, $this->app->make('db.connection'));
     }
 
+    public function testAfterResolving() {
+        /**
+         * @var ResolvingMock $object
+         */
+        $object = $this->app->make(ResolvingMock::class);
+
+        $this->assertFalse($object->resolved);
+    }
 }

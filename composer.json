@@ -1,7 +1,7 @@
 {
     "name": "rnr/resolver-provider",
     "type": "library",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "require": {
         "laravel/framework": "~5.1"
     },
