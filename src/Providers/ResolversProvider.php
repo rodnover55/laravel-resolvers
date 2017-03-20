@@ -9,6 +9,8 @@ use Rnr\Resolvers\Manage\ResolverConfigurator;
 use Rnr\Resolvers\Resolvers\AbstractResolver;
 use ReflectionMethod;
 use ReflectionException;
+use Rnr\Resolvers\Interfaces;
+use Rnr\Resolvers\Resolvers;
 
 class ResolversProvider extends ServiceProvider
 {
@@ -54,11 +56,27 @@ class ResolversProvider extends ServiceProvider
         $configurator
             ->setContainer($this->app);
 
-        foreach ($config->get('container.resolvers', []) as $interface => $resolver) {
+
+
+        foreach (
+            array_merge(
+                $this->getDefaultResolvers(), $config->get('container.resolvers', []))
+            as $interface => $resolver
+        ) {
             $configurator->setResolver($interface, $resolver);
         }
 
         $this->app->instance(ResolverConfigurator::class, $configurator);
+    }
+
+    protected function getDefaultResolvers(): array {
+        return [
+            Interfaces\ContainerAwareInterface::class => Resolvers\ContainerResolver::class,
+            Interfaces\EventAwareInterface::class => Resolvers\EventResolver::class,
+            Interfaces\ConfigAwareInterface::class => Resolvers\ConfigResolver::class,
+            Interfaces\LoggerAwareInterface::class => Resolvers\LoggerResolver::class,
+            Interfaces\DatabaseAwareInterface::class => Resolvers\DatabaseResolver::class
+        ];
     }
 
     /**
