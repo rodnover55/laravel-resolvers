@@ -5,6 +5,7 @@ namespace Rnr\Resolvers\Providers;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Contracts\Config\Repository as Config;
+use Rnr\Resolvers\Manage\ResolverConfigurator;
 use Rnr\Resolvers\Resolvers\AbstractResolver;
 use ReflectionMethod;
 use ReflectionException;
@@ -18,22 +19,17 @@ class ResolversProvider extends ServiceProvider
 
     public function register() {
         $this->publishData();
+        $this->bindConfigurator();
         $this->bindResolvers();
     }
 
     protected function bindResolvers() {
-        /** @var Config $config $config */
-        $config = $this->app->make(Config::class);
+        $this->app->afterResolving(function ($object) {
+            /** @var ResolverConfigurator $configurator */
+            $configurator = $this->app->make(ResolverConfigurator::class);
 
-        $resolvers = array_map(function ($class) {
-            /** @var AbstractResolver $resolver */
-            $resolver = $this->app->make($class);
-            $resolver->setContainer($this->app);
+            $resolvers = $configurator->getResolvers();
 
-            return $resolver;
-        }, $config->get('container.resolvers', []));
-
-        $this->app->afterResolving(function ($object) use ($resolvers) {
             /** @var AbstractResolver[] $resolversToBind */
             $resolversToBind = array_filter($resolvers, function ($abstract) use ($object) {
                 return is_a($object, $abstract);
@@ -47,6 +43,22 @@ class ResolversProvider extends ServiceProvider
                 $this->callResolving($object);
             }
         });
+    }
+
+    protected function bindConfigurator() {
+        /** @var Config $config */
+        $config = $this->app->make(Config::class);
+
+        $configurator = new ResolverConfigurator();
+
+        $configurator
+            ->setContainer($this->app);
+
+        foreach ($config->get('container.resolvers', []) as $interface => $resolver) {
+            $configurator->setResolver($interface, $resolver);
+        }
+
+        $this->app->instance(ResolverConfigurator::class, $configurator);
     }
 
     /**
